@@ -1,0 +1,17 @@
+<button>Increment</button>
+
+			Count: <span></span>
+	<script>
+		let button = document.querySelector('button')
+		let span = document.querySelector('span')
+
+		let data = Alpine.reactive({ count: 1 })
+
+		Alpine.effect(() => {
+			span.textContent = data.count
+		})
+
+		button.addEventListener('click', () => {
+			data.count = data.count + 1
+		})
+	</script>
