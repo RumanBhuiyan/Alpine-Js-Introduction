@@ -1,0 +1,32 @@
+ <!-- Understanding how x-model works -->
+        <div x-data = "{ name : '' }">
+            <input x-model="name"  placeholder="Enter your Name"/>
+             <p x-text = "'Hello '+ name"></p>
+        </div>
+        
+                <!-- handling radio buttons using x-model  -->
+        <div x-data = "{gender : '',}">
+            <input  type="radio" value="Male" x-model="gender"/>
+            <label for="checkbox" >Male</label>
+                   <br />
+            <input  type="radio" value="FeMale" x-model="gender"/>
+            <label for="checkbox" >FeMale</label>
+                    <br />
+            <p x-text = "'Gender : ' + gender"></p>
+        </div>
+        
+                <!-- handling dropdown menu using x-model -->
+        <div x-data = "{ color : '' }"> 
+            <select x-model="color">
+                <option>Red</option>
+                <option>Orange</option>
+                <option>Yellow</option>
+            </select>
+            <p x-text = " 'Your Color : '+ color "></p>
+        </div>
+        
+            <!-- only render value of input field to DOM when clicked outside not on every key stroke -->
+        <div x-data = "{ name : '' }">
+            <input x-model.lazy="name"  placeholder="Enter your Name"/>
+             <p x-text = "'Hello '+ name"></p>
+        </div>
