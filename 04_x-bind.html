@@ -1,0 +1,6 @@
+<div x-data = "{ changeColor: false }">
+            <p x-bind:class="changeColor && 'text-purple-700'"> Hello World</p>
+            <p :class="changeColor ?'text-red-700' : 'text-purple-700' ">
+                 How are You</p>
+            <button @click="changeColor = !changeColor">Click Me</button> 
+        </div>
