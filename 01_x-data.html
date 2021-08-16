@@ -1,0 +1,32 @@
+<html>
+    
+    <head>
+             <!-- cdn for tailwind css -->
+        <link rel="stylesheet" href="https://unpkg.com/tailwindcss@1.2.0/dist/tailwind.min.css">
+                  <!-- cdn for alpine js -->
+        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+                    <!-- cdn for using axios package -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js" integrity="sha512-otOZr2EcknK9a5aa3BbMR9XOjYKtxxscwyRHN6zmdXuRfJ5uApkHB7cz1laWk2g8RKLzV9qv/fl3RPwfCuoxHQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </head>
+    
+    <body >
+        
+     <div x-data="{
+                    myAge : 24,
+                    firstName : 'Ruman',
+                    lastName : function () { return 'Bhuiyan'},
+                    age() { return this.myAge},
+                    incrementAge() { this.myAge++},
+                    decrementAge() { this.myAge--},
+                }">
+            <p x-text="firstName"></p>   
+            <p x-text="lastName"></p> <!--works also <p x-text="lastName()"></p>  -->
+            <p x-text="age()"></p>
+            <button x-on:click="incrementAge" >Age+</button>
+            <!--works also <button x-on:click="incrementAge()" >Increase Age</button> -->
+            <button @click="decrementAge" >Age-</button>
+        </div>
+       
+    </body>
+      
+</html>
